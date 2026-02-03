@@ -36,26 +36,26 @@ Automatización del proceso completo de Extracción → Transformación → Carg
 
 Tecnología              Uso
 
----------------------------------------------------------------------------------------------
-Python             Análisis de datos, transformaciones y ETL.
+-------------------------------------------------------------------
+Python                   Análisis de datos, transformaciones y ETL.
 
----------------------------------------------------------------------------------------------
-Pandas             Manipulación y análisis de datos.
+-------------------------------------------------------------------
+Pandas                   Manipulación y análisis de datos.
 
----------------------------------------------------------------------------------------------
+-------------------------------------------------------------------
 Numpy
 
----------------------------------------------------------------------------------------------
-Matplotlib/Seaborn  Visualización de datos
+-------------------------------------------------------------------
+Matplotlib/Seaborn     Visualización de datos
 
----------------------------------------------------------------------------------------------                                                     
-MySQL Workbench    Diseño y gestión de la base de datos
+-------------------------------------------------------------------                                                     
+MySQL Workbench       Diseño y gestión de la base de datos
 
----------------------------------------------------------------------------------------------
-Jupyter Notebook   Desarrollo interactivo y EDAGit / GitHubControl de versiones y            
-                   colaboración
+-------------------------------------------------------------------
+Jupyter Notebook      Desarrollo interactivo y EDAGit / GitHubControl de versiones y            
+                      colaboración
                    
----------------------------------------------------------------------------------------------
+--------------------------------------------------------------------
 
 📦 Dataset
 El archivo hr.csv contiene la información de los empleados de ABC Corporation. Incluye variables relacionadas con datos personales, laborales y de satisfacción que permitirán realizar el análisis y modelado.
