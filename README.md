@@ -16,6 +16,7 @@ Se distingue por su equipo multidisciplinario compuesto por expertos en UX/UI, m
 
 
 📌 Fases del Proyecto
+
 ºFase 1 — Análisis Exploratorio de Datos (EDA)
 Exploración detallada del dataset hr.csv para comprender su estructura, tipos de datos, valores nulos, distribuciones y relaciones entre variables.
 
