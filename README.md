@@ -1,7 +1,5 @@
 # Proyecto-Optimizacion-de-Talento
 
-# Proyecto-Optimizacion-de-Talento
-
 📊 Employee Retention & Job Satisfaction Analysis
 Proyecto de Análisis de Datos — ABC Corporation
 
