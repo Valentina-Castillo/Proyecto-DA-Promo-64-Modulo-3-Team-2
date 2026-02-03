@@ -33,20 +33,28 @@ Definición de la estructura de la base de datos relacional (tablas, claves prim
 Automatización del proceso completo de Extracción → Transformación → Carga en un archivo .py, garantizando actualizaciones consistentes y de calidad en la base de datos.
 
 🛠️ Tecnologías Utilizadas
-Tecnología              Uso                            
+
+Tecnología              Uso
+
 ---------------------------------------------------------------------------------------------
-Python             Análisis de datos, transformaciones y ETL.                                
+Python             Análisis de datos, transformaciones y ETL.
+
 ---------------------------------------------------------------------------------------------
-Pandas             Manipulación y análisis de datos.                                         
+Pandas             Manipulación y análisis de datos.
+
 ---------------------------------------------------------------------------------------------
-Numpy                                                                                        
+Numpy
+
 ---------------------------------------------------------------------------------------------
-Matplotlib/Seaborn  Visualización de datos                                                   
+Matplotlib/Seaborn  Visualización de datos
+
 ---------------------------------------------------------------------------------------------                                                     
-MySQL Workbench    Diseño y gestión de la base de datos                                      
+MySQL Workbench    Diseño y gestión de la base de datos
+
 ---------------------------------------------------------------------------------------------
 Jupyter Notebook   Desarrollo interactivo y EDAGit / GitHubControl de versiones y            
-                   colaboración                                                              
+                   colaboración
+                   
 ---------------------------------------------------------------------------------------------
 
 📦 Dataset
