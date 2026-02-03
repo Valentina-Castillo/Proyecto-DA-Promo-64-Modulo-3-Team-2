@@ -32,6 +32,8 @@ Definición de la estructura de la base de datos relacional (tablas, claves prim
 ºFase 5 — Creación de una ETL (Bonus)
 Automatización del proceso completo de Extracción → Transformación → Carga en un archivo .py, garantizando actualizaciones consistentes y de calidad en la base de datos.
 
+
+
 🛠️ Tecnologías Utilizadas
 
 Tecnología              Uso
@@ -56,6 +58,8 @@ Jupyter Notebook      Desarrollo interactivo y EDAGit / GitHubControl de version
                       colaboración
                    
 --------------------------------------------------------------------
+
+
 
 📦 Dataset
 El archivo hr.csv contiene la información de los empleados de ABC Corporation. Incluye variables relacionadas con datos personales, laborales y de satisfacción que permitirán realizar el análisis y modelado.
