@@ -16,15 +16,19 @@ Se distingue por su equipo multidisciplinario compuesto por expertos en UX/UI, m
 
 
 📌 Fases del Proyecto
-Fase 1 — Análisis Exploratorio de Datos (EDA)
+ºFase 1 — Análisis Exploratorio de Datos (EDA)
 Exploración detallada del dataset hr.csv para comprender su estructura, tipos de datos, valores nulos, distribuciones y relaciones entre variables.
-Fase 2 — Transformación de los Datos
+
+ºFase 2 — Transformación de los Datos
 Limpieza, normalización, conversión de tipos de datos y aplicación de reglas empresariales mediante funciones en Python para garantizar la calidad e integridad de los datos.
-Fase 3 — Visualización de los Datos
+
+ºFase 3 — Visualización de los Datos
 Generación de visualizaciones descriptivas en Python que resaltan tendencias, áreas de mejora y fortalezas dentro de la empresa, acompañadas de análisis descriptivos.
-Fase 4 — Diseño de BBDD e Inserción de Datos
+
+ºFase 4 — Diseño de BBDD e Inserción de Datos
 Definición de la estructura de la base de datos relacional (tablas, claves primarias, claves foráneas), su creación y la inserción inicial de datos de empleados.
-Fase 5 — Creación de una ETL (Bonus)
+
+ºFase 5 — Creación de una ETL (Bonus)
 Automatización del proceso completo de Extracción → Transformación → Carga en un archivo .py, garantizando actualizaciones consistentes y de calidad en la base de datos.
 
 🛠️ Tecnologías Utilizadas
