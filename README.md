@@ -1,166 +1,323 @@
-# Proyecto-Optimizacion-de-Talento
+# Vertex Digital Solutions — HR Attrition Analytics
 
-📊 Employee Retention & Job Satisfaction Analysis
-Proyecto de Análisis de Datos — ABC Corporation
+## End-to-End Data Pipeline, Relational Modelling & Predictive Analytics
 
-📄 Descripción
-En el entorno empresarial altamente competitivo de hoy en día, la retención de empleados y la satisfacción en el trabajo son cuestiones críticas para cualquier organización. Este proyecto fue desarrollado en colaboración con ABC Corporation con el objetivo de identificar los factores clave que influyen en la satisfacción laboral y, en última instancia, en la retención de empleados.
-A través de un análisis exploratorio de datos, transformaciones, visualizaciones y la creación de una base de datos estructurada, proporcionamos a ABC Corporation información valiosa para informar sus decisiones estratégicas.
+Proyecto académico desarrollado por **Next Level People** como caso práctico de consultoría para Vertex Digital Solutions, en el marco de un programa formativo en Data Analytics.
 
-🏢 Sobre ABC Corporation
-ABC Corporation, fundada en 1980 en California, es una consultora tecnológica especializada en soluciones de Inteligencia Artificial (IA) y Machine Learning. Su objetivo principal es automatizar y optimizar procesos empresariales mediante tecnologías de vanguardia.
-Se distingue por su equipo multidisciplinario compuesto por expertos en UX/UI, marketing, analistas, científicos de datos y otros campos relevantes, lo que permite ofrecer soluciones personalizadas adaptadas a cada cliente.
+---
 
+### 1. Contexto de Negocio
 
-🗂️ Estructura del Proyecto [PENDIENTE]
+Vertex Digital Solutions detecta un aumento en la rotación de empleados (attrition) y necesita entender los factores que están impulsando la salida del talento. El objetivo no es únicamente analizar los datos existentes, sino construir una solución estructurada, reproducible y escalable que permita transformar información dispersa en conocimiento accionable.
 
+La compañía solicita:
 
-📌 Fases del Proyecto
+- Diagnóstico de los drivers de rotación.
+- Estandarización y limpieza del dataset.
+- Diseño de una base de datos relacional normalizada.
+- Preparación para modelado predictivo.
+- Recomendaciones estratégicas basadas en evidencia.
 
-ºFase 1 — Análisis Exploratorio de Datos (EDA)
-Exploración detallada del dataset hr.csv para comprender su estructura, tipos de datos, valores nulos, distribuciones y relaciones entre variables.
+---
 
-ºFase 2 — Transformación de los Datos
-Limpieza, normalización, conversión de tipos de datos y aplicación de reglas empresariales mediante funciones en Python para garantizar la calidad e integridad de los datos.
+### 2. Objetivos del Proyecto
 
-ºFase 3 — Visualización de los Datos
-Generación de visualizaciones descriptivas en Python que resaltan tendencias, áreas de mejora y fortalezas dentro de la empresa, acompañadas de análisis descriptivos.
+- Garantizar calidad y consistencia de datos.
+- Diseñar un modelo relacional en Tercera Forma Normal (3FN).
+- Construir un pipeline ETL reproducible en Python.
+- Generar un dataset analíticamente robusto.
+- Desarrollar un modelo predictivo de riesgo de attrition (en progreso).
 
-ºFase 4 — Diseño de BBDD e Inserción de Datos
-Definición de la estructura de la base de datos relacional (tablas, claves primarias, claves foráneas), su creación y la inserción inicial de datos de empleados.
+---
 
-ºFase 5 — Creación de una ETL (Bonus)
-Automatización del proceso completo de Extracción → Transformación → Carga en un archivo .py, garantizando actualizaciones consistentes y de calidad en la base de datos.
+### 3. Descripción del Dataset
 
+Archivo original: data/raw/hr.csv  
+Filas originales: 1474  
+Columnas originales: 35  
 
+Tras el proceso de limpieza:
 
-🛠️ Tecnologías Utilizadas
+Archivo procesado: data/processed/hr_processed.csv  
+Filas finales: 1470  
+Columnas finales: 31  
+Variable objetivo: attrition (clasificación binaria: Yes/No)
 
-Tecnología              Uso
+El identificador original (employee_number) se conserva como source_employee_id en la base de datos para mantener trazabilidad.
 
--------------------------------------------------------------------
-Python                   Análisis de datos, transformaciones y ETL.
+---
 
--------------------------------------------------------------------
-Pandas                   Manipulación y análisis de datos.
+### 4. Arquitectura de la Solución
 
--------------------------------------------------------------------
-Numpy
+Flujo completo del proyecto:
 
--------------------------------------------------------------------
-Matplotlib/Seaborn     Visualización de datos
+RAW CSV  
+→ Data Cleaning & Feature Engineering (Python)  
+→ Processed CSV  
+→ MySQL Database (3FN)  
+→ Exploratory Analysis  
+→ Predictive Modelling  
 
--------------------------------------------------------------------                                                     
-MySQL Workbench       Diseño y gestión de la base de datos
+La arquitectura separa claramente las fases de ingesta, transformación, almacenamiento y análisis.
 
--------------------------------------------------------------------
-Jupyter Notebook      Desarrollo interactivo y EDAGit / GitHubControl de versiones y            
-                      colaboración
-                   
---------------------------------------------------------------------
+---
 
+### 5. Estructura del Repositorio
 
-
-📦 Dataset
-El archivo hr.csv contiene la información de los empleados de ABC Corporation. Incluye variables relacionadas con datos personales, laborales y de satisfacción que permitirán realizar el análisis y modelado.
-
-Tamaño: 237 KB
-
-🎯 Objetivos del Proyecto
-
-Consolidar conocimientos de librerias Python, análisis de datos,  y SQL.
-Utilizar control de versiones en equipo (Git/GitHub).
-Implementar Scrum como marco de referencia, basándonos en los valores de Agile.
-Mejorar la comunicación entre miembros del equipo.
-Desarrollar habilidades de comunicación pública al exponer el proyecto.
-
-📅 Planificación — Sprints
-El proyecto se desarrolla en 2 sprints siguiendo principios ágiles:
-
-Sprint  |   Contenido
------------------------------------------------------------------------
-
-Sprint 1    Planning → Desarrollo (Fases 1, 2 y 3) → Review + Retro
-
-Sprint 2    Planning → Desarrollo (Fases 4 y 5) → Review final + Demo
-
------------------------------------------------------------------------
-
-
-
-
-----------------------------
-
-## Setup del entorno 🟦 Windows — PowerShell
-
-1. Crear entorno virtual
-
-    ```powershell
-    python -m venv .venv
-    ```
-
-2. Activar entorno
-
-    ```powershell
-    .\.venv\Scripts\Activate.ps1
-    ```
-
-3. Instalar dependencias
-
-    ```powershell
-    pip install -r requirements.txt
-    ```
-
-📌 Si PowerShell bloquea la activación, ejecutar una sola vez:
-
-```powershell
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```text
+.
+├── data/
+│   ├── raw/hr.csv
+│   └── processed/hr_processed.csv
+│
+├── notebooks/
+│   ├── 00_EDA.ipynb
+│   ├── 01_Limpieza.ipynb
+│   ├── 02_Analisis_Descriptivo.ipynb
+│   └── 03_Modelo_Predictivo.ipynb
+│
+├── reports/
+│   ├── figures/
+│   └── slides/Vertex_HR_Attrition_Presentation.pdf
+│
+├── sql/
+│   ├── 01_create_schema_nextlevel_people.sql
+│   └── 02_eda_load_validation.sql
+│
+├── src/
+│   ├── cleaning_core.py
+│   ├── imputation.py
+│   ├── ordinal_mapping.py
+│   ├── pipeline.py
+│   ├── load_mysql.py
+│   └── main.py
+│
+├── requirements.txt
+└── README.md
 ```
 
-Luego repetir el paso 2
+---
 
-## Setup del entorno 🟨 Windows — Git Bash
+### 6. Limpieza y Preparación de Datos
 
-1. Crear entorno virtual
+El pipeline implementa:
 
-    ```bash
+- Normalización de nombres de columnas a snake_case.
+- Corrección de inconsistencias en valores categóricos.
+- Estandarización de escalas ordinales (satisfacción, educación, job level, stock options, performance rating).
+- Tratamiento de valores nulos según tipología de variable.
+- Conversión explícita de tipos para asegurar consistencia en la carga a SQL.
+- Preparación del dataset para análisis descriptivo y modelado predictivo.
+
+La lógica de transformación se encuentra modularizada en src/cleaning_core.py, src/imputation.py y src/ordinal_mapping.py.
+
+---
+
+### 7. Diseño de Base de Datos (MySQL — 3FN)
+
+Base de datos: nextlevel_people
+
+Tablas dimensión:
+
+- departments
+- job_roles
+- education_fields
+- business_travel_types
+- marital_statuses
+- genders
+
+Tabla principal:
+
+employees
+
+Incluye:
+
+- employee_id (Primary Key autoincrement)
+- source_employee_id (único para trazabilidad)
+- Foreign Keys a tablas dimensión
+- Variables numéricas y flags
+- Restricciones CHECK para garantizar integridad de datos
+
+El diseño en Tercera Forma Normal elimina redundancia y asegura consistencia relacional.
+
+---
+
+### 8. Pipeline ETL (Python)
+
+El archivo src/main.py orquesta el flujo completo:
+
+1. Lectura del CSV raw.
+2. Ejecución del pipeline de limpieza.
+3. Generación del CSV procesado.
+4. Carga estructurada a MySQL mediante SQLAlchemy.
+
+El sistema permite ejecutar el flujo completo de manera reproducible desde la raíz del proyecto.  
+El diseño modular facilita la mantenibilidad, escalabilidad y reutilización del pipeline.
+
+---
+
+### 9. Análisis Exploratorio (In Progress)
+
+Notebook: notebooks/02_Analisis_Descriptivo.ipynb
+
+Se integrarán:
+
+- Identificación de principales drivers de attrition.
+- Segmentación por departamento y rol.
+- Impacto de satisfacción, overtime y salario.
+- Insights estratégicos para reducción de rotación.
+
+---
+
+### 10. Modelado Predictivo (In Progress)
+
+Notebook: notebooks/03_Modelo_Predictivo.ipynb
+
+Se integrarán:
+
+- Modelo seleccionado.
+- Métricas (Accuracy, Precision, Recall, F1-score, ROC AUC).
+- Variables con mayor importancia predictiva.
+- Interpretación del impacto en negocio.
+
+---
+
+### 11. Impacto en el Negocio (In Progress)
+
+Esta sección se completará una vez finalizado el análisis descriptivo y el modelo predictivo.
+
+El objetivo es traducir los hallazgos técnicos en impacto estratégico para el negocio, incluyendo:
+
+- Identificación de perfiles con mayor riesgo de rotación.
+- Factores organizativos con mayor influencia en la attrition.
+- Estimación del impacto económico potencial de la rotación.
+- Recomendaciones accionables para reducir la fuga de talento.
+- Priorización de iniciativas basadas en evidencia cuantitativa.
+
+Cuando el análisis esté cerrado, aquí se integrarán:
+
+- Métricas clave de negocio.
+- Escenarios de reducción de rotación.
+- Estimaciones de ahorro potencial.
+- Propuesta de roadmap estratégico.
+
+Estado actual: En progreso.
+
+---
+
+### 12. Tecnologías Utilizadas
+
+#### Programming & Data Processing
+
+- Python 3.x
+- Pandas
+- NumPy
+
+#### Data Visualization
+
+- Matplotlib
+- Seaborn
+
+#### Machine Learning (in progress)
+
+- Scikit-learn
+
+#### Database & Data Modelling
+
+- MySQL 8.x
+- MySQL Workbench
+- SQLAlchemy
+
+#### Development & Version Control
+
+- Jupyter Notebook
+- Git
+- GitHub
+
+---
+
+### 13. Limitaciones y Mejoras Futuras
+
+Aunque el proyecto implementa un pipeline completo end-to-end, existen mejoras que podrían reforzar su robustez, escalabilidad y preparación para entornos productivos:
+
+- Implementación de validaciones automáticas de calidad de datos previas a la carga.
+- Uso de variables de entorno (.env) para la gestión segura de credenciales.
+- Integración de logging estructurado para monitorización del pipeline.
+- Incorporación de tests unitarios en las funciones principales de transformación.
+- Parametrización del pipeline para facilitar su reutilización en otros datasets.
+- Mejora del modelo predictivo mediante validación cruzada y optimización de hiperparámetros.
+
+Estas mejoras permitirían aumentar la mantenibilidad, reproducibilidad y madurez técnica del proyecto.
+
+---
+
+### 14. Cómo Reproducir el Proyecto
+
+1. Crear entorno virtual:
+
     python -m venv .venv
-    ```
 
-2. Activar entorno
+    Activación:
 
-    ```bash
-    source .venv/Scripts/activate
-    ```
+    Windows:
+    .venv\Scripts\Activate.ps1
 
-3. Instalar dependencias
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-## Setup del entorno 🟩 Linux / macOS (Terminal)
-
-1. Crear entorno virtual
-
-    ```bash
-    python3 -m venv .venv
-    ```
-
-2. Activar entorno
-
-    ```bash
+    Mac/Linux:
     source .venv/bin/activate
-    ```
 
-3. Instalar dependencias
+2. Instalar dependencias:
 
-    ```bash
     pip install -r requirements.txt
-    ```
 
-✅ Comprobación rápida (opcional)
+3. Crear esquema MySQL ejecutando:
 
-```bash
-python -c "import pandas, numpy, seaborn, matplotlib, sklearn; print('Entorno OK')"
-```
+    sql/01_create_schema_nextlevel_people.sql
+
+4. Ejecutar pipeline completo desde la raíz del proyecto:
+
+    python src/main.py
+
+Esto generará data/processed/hr_processed.csv y cargará las dimensiones y la tabla employees en la base de datos nextlevel_people.
+
+Validación opcional:
+
+sql/02_eda_load_validation.sql
+
+---
+
+### 15. Equipo — Next Level People
+
+Scrum Master  
+Valentina Castillo  
+Coordinación & Metodología Ágil  
+Planificación de sprints, organización del equipo y seguimiento estratégico del proyecto.  
+[LinkedIn](https://www.linkedin.com/in/valentina-castillo-escobar-191863202/) | [GitHub](https://github.com/Valentina-Castillo)
+
+Data Team  
+Arantxa Barea  
+Análisis & Modelado  
+Exploración de datos, generación de insights, análisis exploratorio y predictivo.  
+[LinkedIn](https://www.linkedin.com/in/arantxa-barea/) | [GitHub](https://github.com/arantxa-90)
+
+Data Team  
+Nieves Sánchez  
+Arquitectura & Automatización  
+Diseño de base de datos, estructuración del repositorio, desarrollo de la ETL y documentación.  
+[LinkedIn](https://www.linkedin.com/in/nieves-sanchez-data) | [GitHub](https://github.com/nieves-sanchez)
+
+---
+
+### 16. Estado del Proyecto
+
+Pipeline de datos: Completado  
+Modelado de base de datos: Completado  
+Análisis exploratorio: En progreso  
+Modelado predictivo: En progreso  
+Presentación final: Pendiente de integración  
+
+---
+
+### 17. Aviso Legal
+
+Proyecto desarrollado con fines educativos y de portfolio.  
+No contiene datos reales de empleados ni información sensible empresarial.
