@@ -30,7 +30,10 @@ DB_PORT = 3306
 DB_NAME = "nextlevel_people"
 
 # Ruta del CSV 
-CSV_PATH = Path("Proyecto-DA-Promo-64-Modulo-3-Team-2") / "data" / "processed" / "hr_processed.csv"
+# Ruta absoluta al CSV procesado (independiente del directorio desde el que se ejecute)
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+CSV_PATH = PROJECT_ROOT / "data" / "processed" / "hr_processed.csv"
+
 
 # Encuestas / escalas 1..4 (según CHECKs típicos del dataset HR)
 SURVEY_COLS_1_4 = [
@@ -177,7 +180,6 @@ def map_survey_to_1_4(s: pd.Series) -> pd.Series:
     s_norm = normalize_string_series(s).str.lower()
 
     mapping = {
-        # inglés (por si acaso)
         "very low": 1,
         "low": 2,
         "medium": 3,
