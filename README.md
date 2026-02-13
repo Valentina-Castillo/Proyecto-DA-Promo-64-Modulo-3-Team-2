@@ -60,6 +60,12 @@ RAW CSV
 
 La arquitectura separa claramente las fases de ingesta, transformación, almacenamiento y análisis.
 
+#### Arquitectura del Pipeline de Datos
+
+![Data Pipeline Architecture](docs/data_pipeline_architecture.png)
+
+Este diagrama representa la separación entre las capas de ingesta, transformación, almacenamiento relacional y consumo analítico.
+
 ---
 
 ### 5. Estructura del Repositorio
@@ -69,6 +75,10 @@ La arquitectura separa claramente las fases de ingesta, transformación, almacen
 ├── data/
 │   ├── raw/hr.csv
 │   └── processed/hr_processed.csv
+│
+├── docs/
+│   ├── erd_nextlevel_people.png
+│   └── data_pipeline_architecture.png
 │
 ├── notebooks/
 │   ├── 00_EDA.ipynb
@@ -143,6 +153,8 @@ El diseño en Tercera Forma Normal elimina redundancia y asegura consistencia re
 #### Diagrama Entidad-Relación (ERD)
 
 ![ERD NextLevel People](docs/erd_nextlevel_people.png)
+
+Este diagrama refleja la estructura relacional normalizada y las relaciones entre la tabla principal y las tablas dimensión.
 
 ---
 
