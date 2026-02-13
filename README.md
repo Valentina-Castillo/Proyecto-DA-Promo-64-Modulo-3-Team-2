@@ -152,7 +152,7 @@ El diseño en Tercera Forma Normal elimina redundancia y asegura consistencia re
 
 #### Diagrama Entidad-Relación (ERD)
 
-![ERD NextLevel People](docs/erd_nextlevel_people.png)
+![ERD NextLevel People](docs/edr_nextlevel_people.png)
 
 Este diagrama refleja la estructura relacional normalizada y las relaciones entre la tabla principal y las tablas dimensión.
 
