@@ -140,6 +140,10 @@ Incluye:
 
 El diseño en Tercera Forma Normal elimina redundancia y asegura consistencia relacional.
 
+#### Diagrama Entidad-Relación (ERD)
+
+![ERD NextLevel People](docs/erd_nextlevel_people.png)
+
 ---
 
 ### 8. Pipeline ETL (Python)
