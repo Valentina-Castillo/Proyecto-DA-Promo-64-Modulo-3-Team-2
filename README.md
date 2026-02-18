@@ -331,19 +331,19 @@ Scrum Master
 Valentina Castillo  
 Coordinación & Metodología Ágil  
 Planificación de sprints, organización del equipo y seguimiento estratégico del proyecto.  
-[LinkedIn](https://www.linkedin.com/in/valentina-castillo-escobar-191863202/) | [GitHub](https://github.com/Valentina-Castillo)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/valentina-castillo-escobar-191863202/) | [![GitHub](https://img.shields.io/badge/GitHub-Perfil-black?logo=github)](https://github.com/Valentina-Castillo)
 
 Data Team  
 Arantxa Barea  
 Análisis & Modelado  
 Exploración de datos, generación de insights, análisis exploratorio y predictivo.  
-[LinkedIn](https://www.linkedin.com/in/arantxa-barea/) | [GitHub](https://github.com/arantxa-90)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/arantxa-barea/) | [![GitHub](https://img.shields.io/badge/GitHub-Perfil-black?logo=github)](https://github.com/arantxa-90)
 
 Data Team  
 Nieves Sánchez  
 Arquitectura & Automatización  
 Diseño de base de datos, estructuración del repositorio, desarrollo de la ETL y documentación.  
-[LinkedIn](https://www.linkedin.com/in/nieves-sanchez-data) | [GitHub](https://github.com/nieves-sanchez)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue?logo=linkedin)](https://www.linkedin.com/in/nieves-sanchez-data) | [![GitHub](https://img.shields.io/badge/GitHub-Perfil-black?logo=github)](https://github.com/nieves-sanchez)
 
 ---
 
