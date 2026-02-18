@@ -4,6 +4,11 @@
 
 Proyecto académico desarrollado por **Next Level People** como caso práctico de consultoría para Vertex Digital Solutions, en el marco de un programa formativo en Data Analytics.
 
+📊 **Presentación Ejecutiva del Proyecto**
+
+La presentación final del proyecto, incluyendo diagnóstico, modelización y plan estratégico, está disponible en el siguiente enlace:  
+[Ver presentación en PDF](reports/slides/vertex_HR_Attrition_Presentation.pdf)
+
 ---
 
 ### 1. Contexto de Negocio
@@ -71,39 +76,51 @@ Este diagrama representa la separación entre las capas de ingesta, transformaci
 ### 5. Estructura del Repositorio
 
 ```text
-.
+PROYECTO-DA-PROMO-64-MODULO-3-TEAM-2/
+│
+├── assets/
+│ └── fonts/ # Tipografías utilizadas en visualizaciones y presentación
+│ └── static/
+│
 ├── data/
-│   ├── raw/hr.csv
-│   └── processed/hr_processed.csv
+│ ├── raw/
+│ │ └── hr.csv # Dataset original
+│ └── processed/
+│ └── hr_processed.csv # Dataset transformado y preparado para modelado y carga
 │
 ├── docs/
-│   ├── erd_nextlevel_people.png
-│   └── data_pipeline_architecture.png
+│ ├── data_pipeline_architecture.png
+│ ├── data_quality_report.md
+│ └── edr_nextlevel_people.png # Diagrama entidad-relación (BBDD)
 │
 ├── notebooks/
-│   ├── 00_EDA.ipynb
-│   ├── 01_Limpieza.ipynb
-│   ├── 02_Analisis_Descriptivo.ipynb
-│   └── 03_Modelo_Predictivo.ipynb
+│ ├── 00_EDA.ipynb
+│ ├── 01_Limpieza.ipynb
+│ ├── 02_Análisis_Descriptivo.ipynb
+│ └── 03_Análisis_Inferencial.ipynb
 │
 ├── reports/
-│   ├── figures/
-│   └── slides/Vertex_HR_Attrition_Presentation.pdf
+│ ├── figures/ # Visualizaciones exportadas
+│ │ ├── 00_eda/
+│ │ ├── 01_análisis_estadístico/
+│ │ └── 02_análisis_inferencial/
+│ └── slides/
+│ └── vertex_HR_Attrition_Presentation.pdf
 │
 ├── sql/
-│   ├── 01_create_schema_nextlevel_people.sql
-│   └── 02_eda_load_validation.sql
+│ ├── 01_create_schema_nextlevel_people.sql
+│ └── 02_eda_load_validation.sql
 │
 ├── src/
-│   ├── cleaning_core.py
-│   ├── imputation.py
-│   ├── ordinal_mapping.py
-│   ├── pipeline.py
-│   ├── load_mysql.py
-│   └── main.py
+│ ├── cleaning_core.py # Funciones principales de limpieza
+│ ├── imputation.py # Tratamiento de valores nulos
+│ ├── ordinal_mapping.py # Mapeo de variables ordinales
+│ ├── load_mysql.py # Carga de datos en MySQL
+│ ├── main.py # Orquestación del proceso
+│ └── pipeline.py # Definición del flujo ETL
 │
-├── requirements.txt
-└── README.md
+├── README.md # Documentación principal del proyecto
+└── requirements.txt # Dependencias del entorno
 ```
 
 ---
@@ -172,52 +189,56 @@ El diseño modular facilita la mantenibilidad, escalabilidad y reutilización de
 
 ---
 
-### 9. Análisis Exploratorio (In Progress)
+### 9. Análisis Exploratorio
 
 Notebook: notebooks/02_Analisis_Descriptivo.ipynb
 
-Se integrarán:
+El análisis descriptivo tuvo como objetivo caracterizar el fenómeno de attrition antes de avanzar hacia la modelización explicativa.
 
-- Identificación de principales drivers de attrition.
-- Segmentación por departamento y rol.
-- Impacto de satisfacción, overtime y salario.
-- Insights estratégicos para reducción de rotación.
+Principales hallazgos:
+
+- El attrition se concentra en etapas tempranas de carrera, especialmente en Entry Level y perfiles con menor seniority.
+- Factores operativos como overtime, viajes frecuentes y baja satisfacción laboral muestran asociación recurrente con mayores tasas de salida.
+- Variables estructurales como departamento, rol y nivel organizativo segmentan claramente el riesgo.
+- La compensación económica influye principalmente en fases iniciales y contextos específicos, aunque no explica por sí sola el comportamiento global.
+- Se observan fricciones potenciales en posicionamiento salarial, con solapamiento entre niveles jerárquicos.
+- El clima organizacional agregado muestra relación significativa con el attrition.
+- El fenómeno presenta naturaleza multifactorial, con combinaciones de variables que generan hotspots concretos.
+
+Este análisis permitió establecer una base estructurada para la posterior modelización explicativa.
 
 ---
 
-### 10. Modelado Predictivo (In Progress)
+### 10. Modelado Predictivo
 
 Notebook: notebooks/03_Modelo_Predictivo.ipynb
 
-Se integrarán:
+A partir de los hallazgos descriptivos, se desarrolló un enfoque explicativo orientado a comprender los drivers estructurales del attrition y estimar el riesgo asociado a cada perfil organizativo.
 
-- Modelo seleccionado.
-- Métricas (Accuracy, Precision, Recall, F1-score, ROC AUC).
-- Variables con mayor importancia predictiva.
-- Interpretación del impacto en negocio.
+El proceso incluyó:
+
+- Implementación de regresión logística para cuantificar la relación entre variables operativas y estructurales y la probabilidad de attrition.
+- Interpretabilidad mediante análisis SHAP para identificar la contribución específica de cada variable tanto a nivel global como individual.
+- Segmentación mediante clustering basado en patrones explicativos, permitiendo identificar perfiles organizativos con distintos niveles de exposición al riesgo.
+
+Este enfoque permitió pasar de la identificación de correlaciones descriptivas a una comprensión estructurada de los factores que incrementan la probabilidad de abandono, habilitando perfiles de riesgo interpretables y accionables.
 
 ---
 
-### 11. Impacto en el Negocio (In Progress)
+### 11. Impacto en el Negocio
 
-Esta sección se completará una vez finalizado el análisis descriptivo y el modelo predictivo.
+El análisis descriptivo y la modelización explicativa permiten traducir los hallazgos técnicos en implicaciones estratégicas para la organización.
 
-El objetivo es traducir los hallazgos técnicos en impacto estratégico para el negocio, incluyendo:
+Principales aportaciones:
 
-- Identificación de perfiles con mayor riesgo de rotación.
-- Factores organizativos con mayor influencia en la attrition.
-- Estimación del impacto económico potencial de la rotación.
-- Recomendaciones accionables para reducir la fuga de talento.
-- Priorización de iniciativas basadas en evidencia cuantitativa.
+- Identificación de perfiles organizativos con distinto nivel de exposición al riesgo de attrition.
+- Confirmación de que el fenómeno no es homogéneo, sino segmentado por rol, nivel y trayectoria profesional.
+- Identificación de drivers estructurales asociados a mayor probabilidad de abandono (overtime, baja satisfacción, progresión limitada y condiciones del rol).
+- Segmentación en clusters diferenciados que permiten priorizar intervenciones según perfil organizativo.
 
-Cuando el análisis esté cerrado, aquí se integrarán:
+Estos resultados permiten pasar de una percepción general de “alta rotación” a una comprensión estructurada y segmentada del fenómeno, habilitando estrategias de retención dirigidas.
 
-- Métricas clave de negocio.
-- Escenarios de reducción de rotación.
-- Estimaciones de ahorro potencial.
-- Propuesta de roadmap estratégico.
-
-Estado actual: En progreso.
+Las recomendaciones propuestas se organizan en corto, medio y largo plazo, combinando medidas de contención inmediata, estabilización organizativa y desarrollo estructural del talento.
 
 ---
 
@@ -252,18 +273,21 @@ Estado actual: En progreso.
 
 ---
 
-### 13. Limitaciones y Mejoras Futuras
+### 13. Limitaciones y Evolución del Proyecto
 
-Aunque el proyecto implementa un pipeline completo end-to-end, existen mejoras que podrían reforzar su robustez, escalabilidad y preparación para entornos productivos:
+El proyecto implementa un pipeline completo end-to-end que integra análisis exploratorio, modelado predictivo, diseño de base de datos relacional y automatización mediante ETL.
 
+No obstante, su evolución hacia un entorno productivo podría contemplar las siguientes mejoras estratégicas:
+
+- Integración automática con fuentes dinámicas de datos para permitir actualizaciones periódicas sin intervención manual.
+- Enriquecimiento del modelo predictivo mediante la incorporación de nuevas variables estratégicas (desempeño, clima organizativo, indicadores de productividad).
+- Evolución hacia un enfoque de Machine Learning con reentrenamiento periódico y validación continua del rendimiento del modelo.
+- Desarrollo de un dashboard interactivo (Power BI o Tableau) para facilitar la toma de decisiones en tiempo real por parte de dirección y RRHH.
 - Implementación de validaciones automáticas de calidad de datos previas a la carga.
-- Uso de variables de entorno (.env) para la gestión segura de credenciales.
-- Integración de logging estructurado para monitorización del pipeline.
-- Incorporación de tests unitarios en las funciones principales de transformación.
-- Parametrización del pipeline para facilitar su reutilización en otros datasets.
-- Mejora del modelo predictivo mediante validación cruzada y optimización de hiperparámetros.
+- Incorporación de logging estructurado y gestión segura de credenciales mediante variables de entorno.
+- Inclusión de tests unitarios para reforzar la robustez y mantenibilidad del pipeline.
 
-Estas mejoras permitirían aumentar la mantenibilidad, reproducibilidad y madurez técnica del proyecto.
+Estas líneas de evolución permitirían consolidar el proyecto como un sistema escalable, automatizado y plenamente integrado en la estrategia de gestión del talento.
 
 ---
 
@@ -327,9 +351,9 @@ Diseño de base de datos, estructuración del repositorio, desarrollo de la ETL 
 
 Pipeline de datos: Completado  
 Modelado de base de datos: Completado  
-Análisis exploratorio: En progreso  
-Modelado predictivo: En progreso  
-Presentación final: Pendiente de integración  
+Análisis exploratorio: Completado
+Modelado predictivo: Completado
+Presentación final: Completado
 
 ---
 
